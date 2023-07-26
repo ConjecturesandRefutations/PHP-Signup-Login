@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&');
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+@keyframes pan {
+  100% {
+    background-position: 15% 50%;
+  }
+}
+
+.login {
+  font-family: poppins, consolas;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  background-image: url(./images/pencils.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: pan 6s infinite alternate linear;
+  height: 100vh; 
+  width: 100%; 
+  margin: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 500px) {
+  .login {
+    padding: 0;
+  }
+}
+
+.login-card {
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .login-card {
+    margin: 0;
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    margin: 0;
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-card {
+    margin: 0;
+    width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    margin: 0;
+    width: 300px;
+  }
+}
+
+@media (max-width: 328px) {
+  .login-card {
+    margin: 0;
+    width: 290px;
+  }
+}
+
+@media (max-width: 300px) {
+  .login-card {
+    margin: 0;
+    width: 280px;
+  }
+}
+
+@media (max-width: 290px) {
+  .login-card {
+    margin: 0;
+    width: 270px;
+  }
+}
+
+@media (max-width: 275px) {
+  .login-card {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.loginSignup{
+  margin-bottom: 0px; 
+}
+
+.t1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.login-card > h3 {
+  margin: 0 0 30px;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.login-form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.login-form > a {
+  color: #216ce7;
+}
+
+.login-form > input,
+.login-form > button {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 8px;
+}
+
+.login-form > input {
+  border: 2px solid #ebebeb;
+}
+
+.loginBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginBtn:hover {
+  background-color: #ff4040;
+}
+
+.loginBtn:active {
+  background-color: #ff1f1f;
+}
+
+.loginBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+}

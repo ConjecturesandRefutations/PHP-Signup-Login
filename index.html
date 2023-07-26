@@ -4,25 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Signup</h1>
 
-    <form action="">
-        <div>
-            <label for="name"></label>
-            <input type="text" id="name" name="name">
-        </div>
+    <div class="login">
+    
+    
+        <div class="login-card">
+    
+          <h1>Blog Spot</h1>
+          <h2>Signup</h2>
+          <form class="login-form">
+            
+            <!-- Name Input -->
+            <input type="text" id="name" name="name" placeholder="name"/>
+            
+            <!-- Email Input -->
+            <input type="email" id="email" name="email" placeholder="email"/>
+            
+            <!-- Password Input -->
+            <input type="password" id="password" name="password" placeholder="password"/>
 
-        <div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email">
-        </div>
-
-        <div>
-            <label for="password">password</label>
-            <input type="password" id="password" name="password">
-        </div>
-    </form>
+            <!-- Confirm Password -->
+            <input type="password-confirmation" id="passwor
+            d-confirmation" name="password-confirmation" placeholder="confirm password">
+            
+            <p class="loginSignup">Already Have an Account?</p>
+            <a href="/">Login</a>
+            <button href="#" class='loginBtn'>SIGNUP</button>
+          </form>
+    </div>
+    </div>
 </body>
 </html>
