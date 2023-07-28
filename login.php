@@ -1,5 +1,7 @@
 <?php
 
+$is_invalid = false;
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $mysqli = require __DIR__ . "/database.php";
@@ -12,8 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $user = $result->fetch_assoc();
 
-    var_dump($user);
-    exit;
+ if($user) {
+
+    if (password_verify($_POST["password"], $user["password_hash"])) {
+
+        session_start();
+        
+        $_SESSION["user_id"] = $user["id"];
+
+        header("Location: index-two.php");
+        exit;
+    }
+ }
+    $is_invalid = true;
 }
 
 ?>
@@ -35,10 +48,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
           <h1>Blog Spot</h1>
           <h2>Login</h2>
+
+            <?php if ($is_invalid): ?>
+                <em class="error-message">Invalid Login</em>
+            <?php endif; ?>
+
           <form class="login-form" method="POST">
             
             <!-- Email Input -->
-            <input type="email" id="email" name="email" placeholder="email"/>
+            <input type="email" id="email" name="email" placeholder="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>"/>
             
             <!-- Password Input -->
             <input type="password" id="password" name="password" placeholder="password"/>
