@@ -42,8 +42,21 @@ $_POST["name"],
 $_POST["email"],
 $password_hash);
 
-$stmt->execute();
+try {
+    if ($stmt->execute()) {
+        header("Location: login.php");
+        exit;
+    } else {
+        die("An error occurred during signup: " . $stmt->error);
+    }
+} catch (mysqli_sql_exception $e) {
+    if ($e->getCode() === 1062) {
+        die("Email already taken");
+    } else {
+        die("An error occurred during signup: " . $e->getMessage());
+    }
+}
 
-echo "Signup Successful";
+
 
 ?>
