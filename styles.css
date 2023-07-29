@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: poppins, consolas;
 }
 
 a,
@@ -16,7 +17,7 @@ button {
 }
 
 .login {
-  font-family: poppins, consolas;
+
   display: grid;
   place-items: center;
   margin: 0;
