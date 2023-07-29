@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -15,19 +16,23 @@
     
           <h1>Blog Spot</h1>
           <h2>Signup</h2>
-          <form class="login-form" action="signup.php" method="POST">
+          <form class="login-form" action="signup.php" method="POST" id="signup" onsubmit="return validateForm()">
             
             <!-- Name Input -->
             <input type="text" id="name" name="name" placeholder="name"/>
+            <span class="error" id="nameError"></span>
             
             <!-- Email Input -->
             <input type="email" id="email" name="email" placeholder="email"/>
+            <span class="error" id="emailError"></span>
             
             <!-- Password Input -->
             <input type="password" id="password" name="password" placeholder="password"/>
+            <span class="error" id="passwordError"></span>
 
             <!-- Confirm Password -->
             <input type="password" id="password-confirmation" name="password_confirmation" placeholder="confirm password">
+            <span class="error" id="passwordConfirmationError"></span>
             
             <p class="loginSignup">Already Have an Account?</p>
             <a href="login.php">Login</a>

@@ -18,12 +18,19 @@ if (isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div class='home'>
     <h1>Home</h1>
+
     <?php if (isset($_SESSION["user_id"])): ?>
+
         <p>Welcome <?= htmlspecialchars($user["name"]) ?></p>
         <p><a href="logout.php">Log out</a></p>
+        
     <?php else: ?>
         <p><a href="login.php">Log in</a> or <a href="signup.php">Sign Up</a></p>
     <?php endif; ?>
+
+    <div>
 </body>
 </html>

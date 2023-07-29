@@ -8,8 +8,8 @@ if (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email is required");
 }
 
-if (strlen($_POST["password"]) < 8) {
-    die("Password must be at least 8 characters");
+if (strlen($_POST["password"]) < 6) {
+    die("Password must be at least 6 characters");
 }
 
 if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
@@ -51,7 +51,7 @@ try {
     }
 } catch (mysqli_sql_exception $e) {
     if ($e->getCode() === 1062) {
-        die("Email already taken");
+        die("Email already taken. Please go back to the go back to the <a href='index.html'> signup page</a> and try again");
     } else {
         die("An error occurred during signup: " . $e->getMessage());
     }
